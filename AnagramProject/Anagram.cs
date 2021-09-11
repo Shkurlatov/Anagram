@@ -6,23 +6,20 @@ namespace AnagramProject
     {
         public string Reverse(string sourceString)
         {
-            if(sourceString == null) return "";
-
-            string anagram = "";
+            if (sourceString == null) 
+            {
+                return ""; 
+            }
 
             string[] sourseWords = sourceString.Split(" ");
+            string[] reverseWords = new string[sourseWords.Length];
 
             for (int i = 0; i < sourseWords.Length; i++)
             {
-                anagram += ReverseWord(sourseWords[i]);
-
-                if (i < sourseWords.Length - 1)
-                {
-                    anagram += " ";
-                }
+                reverseWords[i] = ReverseWord(sourseWords[i]);
             }
 
-            return anagram;
+            return String.Join(" ", reverseWords);
         }
 
         private string ReverseWord(string word)

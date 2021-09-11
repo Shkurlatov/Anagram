@@ -6,18 +6,11 @@ namespace AnagramProject
     {
         static void Main(string[] args)
         {
-            Anagram converter = new Anagram();
-
-            string userString;
-            string result;
+            Anagram anagram = new Anagram();
 
             Console.WriteLine("Enter your text");
 
-            userString = Console.ReadLine();
-
-            result = converter.Reverse(userString);
-
-            Console.WriteLine("Your text after processing: " + result);
+            Console.WriteLine("Your text after processing: " + anagram.Reverse(Console.ReadLine()));
         }
     }
 }
